@@ -95,6 +95,13 @@ class AudioPlayer {
         } catch {
             print(error.localizedDescription)
         }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
         return player
     }
     
