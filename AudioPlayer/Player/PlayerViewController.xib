@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="AudioPlayer" customModuleProvider="target">
+            <connections>
+                <outlet property="albumImageView" destination="Oad-8H-76d" id="d4U-x5-uSi"/>
+                <outlet property="artistTitleLabel" destination="rkk-Qy-W4k" id="ZO4-TQ-0xM"/>
+                <outlet property="progressView" destination="R2J-9H-bKI" id="LFN-qX-MuT"/>
+                <outlet property="songTitleLabel" destination="uai-ue-4BE" id="Hyf-f1-6gm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="KgZ-aA-KyJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="album" translatesAutoresizingMaskIntoConstraints="NO" id="Oad-8H-76d">
+                    <rect key="frame" x="20" y="44" width="374" height="374"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Oad-8H-76d" secondAttribute="height" multiplier="1:1" id="1y7-si-Lpj"/>
+                    </constraints>
+                </imageView>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="R2J-9H-bKI">
+                    <rect key="frame" x="20" y="460" width="374" height="2"/>
+                </progressView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uai-ue-4BE">
+                    <rect key="frame" x="20" y="513" width="374" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkk-Qy-W4k">
+                    <rect key="frame" x="20" y="542" width="374" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEL-zp-iVg">
+                    <rect key="frame" x="20" y="570" width="374" height="292"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLO-fC-tlJ">
+                            <rect key="frame" x="150" y="131" width="74" height="30"/>
+                            <state key="normal" title="play/pause"/>
+                            <connections>
+                                <action selector="playTapped:" destination="-1" eventType="touchUpInside" id="w88-bO-nbV"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuf-f4-yt8">
+                            <rect key="frame" x="24" y="131" width="31" height="30"/>
+                            <state key="normal" title="prev"/>
+                            <connections>
+                                <action selector="lastTapped:" destination="-1" eventType="touchUpInside" id="Jzs-7e-woa"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bxh-dh-Ptp">
+                            <rect key="frame" x="328" y="131" width="30" height="30"/>
+                            <state key="normal" title="next"/>
+                            <connections>
+                                <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="img-K9-DVp"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="uuf-f4-yt8" firstAttribute="top" secondItem="qLO-fC-tlJ" secondAttribute="top" id="SN8-QG-bQq"/>
+                        <constraint firstItem="Bxh-dh-Ptp" firstAttribute="top" secondItem="qLO-fC-tlJ" secondAttribute="top" id="SmF-Gp-Gsa"/>
+                        <constraint firstItem="qLO-fC-tlJ" firstAttribute="centerX" secondItem="TEL-zp-iVg" secondAttribute="centerX" id="e1o-lB-Io8"/>
+                        <constraint firstItem="uuf-f4-yt8" firstAttribute="leading" secondItem="TEL-zp-iVg" secondAttribute="leading" constant="24" id="iLJ-XD-KrX"/>
+                        <constraint firstAttribute="trailing" secondItem="Bxh-dh-Ptp" secondAttribute="trailing" constant="16" id="p7u-RN-ZgV"/>
+                        <constraint firstItem="qLO-fC-tlJ" firstAttribute="centerY" secondItem="TEL-zp-iVg" secondAttribute="centerY" id="uju-Ep-Yn1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="TEL-zp-iVg" firstAttribute="top" secondItem="rkk-Qy-W4k" secondAttribute="bottom" constant="8" id="6ex-HZ-vha"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TEL-zp-iVg" secondAttribute="bottom" id="A4N-Bz-d9V"/>
+                <constraint firstItem="Oad-8H-76d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DJn-4p-g56"/>
+                <constraint firstItem="Oad-8H-76d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="GCi-jd-bvf"/>
+                <constraint firstItem="uai-ue-4BE" firstAttribute="trailing" secondItem="rkk-Qy-W4k" secondAttribute="trailing" id="ILC-4N-75o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TEL-zp-iVg" secondAttribute="trailing" constant="20" id="PaI-iM-9Sg"/>
+                <constraint firstItem="R2J-9H-bKI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="TIy-Vs-sKU"/>
+                <constraint firstItem="R2J-9H-bKI" firstAttribute="bottom" secondItem="uai-ue-4BE" secondAttribute="top" multiplier="0.9" id="Zvq-gS-ZgO"/>
+                <constraint firstItem="uai-ue-4BE" firstAttribute="leading" secondItem="rkk-Qy-W4k" secondAttribute="leading" id="afE-sN-yKD"/>
+                <constraint firstItem="TEL-zp-iVg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fOv-Uw-J7A"/>
+                <constraint firstItem="rkk-Qy-W4k" firstAttribute="top" secondItem="uai-ue-4BE" secondAttribute="bottom" constant="8" id="imr-Uj-cda"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Oad-8H-76d" secondAttribute="trailing" constant="20" id="jTf-zR-Z5m"/>
+                <constraint firstItem="uai-ue-4BE" firstAttribute="trailing" secondItem="R2J-9H-bKI" secondAttribute="trailing" id="jsk-l6-pIt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="R2J-9H-bKI" secondAttribute="trailing" constant="20" id="sgi-Tw-QXL"/>
+                <constraint firstItem="uai-ue-4BE" firstAttribute="leading" secondItem="R2J-9H-bKI" secondAttribute="leading" id="ssY-RM-bh9"/>
+                <constraint firstItem="R2J-9H-bKI" firstAttribute="top" secondItem="Oad-8H-76d" secondAttribute="bottom" multiplier="1.1" id="wJu-Sb-c6L"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="album" width="512" height="512"/>
+    </resources>
+</document>
