@@ -6,7 +6,7 @@ target 'AudioPlayer' do
   use_frameworks!
 
   # Pods for AudioPlayer
-  pod 'Date'
+  
   
 
   
