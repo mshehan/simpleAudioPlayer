@@ -6,7 +6,7 @@ target 'AudioPlayer' do
   use_frameworks!
 
   # Pods for AudioPlayer
-  pod 'AgoraRtcEngine_iOS'
+  
   target 'AudioPlayerTests' do
     inherit! :search_paths
     # Pods for testing
